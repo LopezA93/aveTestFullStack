@@ -9,6 +9,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { Button, Box, TextField } from "@mui/material";
 import { useState } from "react";
 import { putTarea } from "../../services/db";
+
 const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
   const [checked, setChecked] = useState(false);
   const [editTarea, setEditTarea] = useState(false);
@@ -61,6 +62,15 @@ const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
             inputProps={{ "aria-label": "controlled" }}
             disabled={checked || estado === "Completado" ? true : false}
           />
+          <TextField
+           id="datetime-local"
+           label="Recordatorio"
+           type="datetime-local"
+           InputLabelProps={{
+             shrink: true,
+           }}
+           className="recordatorio"
+          />
         </div>
         <div className={!editTarea ? "divEditTarea" : ""}>
           <Box
@@ -92,31 +102,7 @@ const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
           </Box>
         </div>
       </Grid>
-      {/* { editTarea ? (
-        <Box
-          component="form"
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "25ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <div>
-            <TextField
-              required
-              id="outlined-required"
-              label="Ingrese Tarea"
-              defaultValue=""
-              name="text"
-              onChange={handelChangeEdit}
-            />
-
-            <Button onClick={saveEditTarea()}>Guardar nueva tarea</Button>
-          </div>
-        </Box>
-      ) : (
-        ""
-      )} */}
+      
     </>
   );
 };
