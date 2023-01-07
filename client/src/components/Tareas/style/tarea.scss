@@ -1,0 +1,24 @@
+.tarea{
+    border: 1px solid black;
+
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+   
+}
+.TextfieldEdit{
+    width: 17ch !important;
+    margin: 8px 0px 8px 0px !important;
+
+}
+.tarea-boton{
+    margin-top: 1rem !important;
+    display: block !important;
+}
+.tarea-completada{
+    background-color: rgb(4, 176, 93);
+    
+}
+.divEditTarea{
+    display: none;
+}
