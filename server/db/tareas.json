@@ -3,5 +3,10 @@
     "text": "Comprar la coca ",
     "estado": "Completado",
     "id": "1"
+  },
+  {
+    "text": "Comprar algo ",
+    "estado": "Pendiente",
+    "id": 2
   }
 ]
