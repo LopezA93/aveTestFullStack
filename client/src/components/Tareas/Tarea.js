@@ -2,15 +2,20 @@ import { Grid } from "@mui/material";
 import "./style/tarea.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import FormGroup from "@mui/material/FormGroup";
 import * as React from "react";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Button, Box, TextField } from "@mui/material";
 import { useState } from "react";
-import { putTarea } from "../../services/db";
 
-const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
+const Tarea = ({
+  id,
+  author,
+  text,
+  estado,
+  check,
+  eliminarTarea,
+  saveEditTarea,
+}) => {
   const [checked, setChecked] = useState(false);
   const [editTarea, setEditTarea] = useState(false);
   const [datos, setDatos] = useState();
@@ -58,18 +63,18 @@ const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
           <Checkbox
             checked={checked || estado === "Completado"}
             onChange={handleChange}
-            onClick={() => check(id, { text })}
+            onClick={() => check(id, { author, text })}
             inputProps={{ "aria-label": "controlled" }}
             disabled={checked || estado === "Completado" ? true : false}
           />
           <TextField
-           id="datetime-local"
-           label="Recordatorio"
-           type="datetime-local"
-           InputLabelProps={{
-             shrink: true,
-           }}
-           className="recordatorio"
+            id="datetime-local"
+            label="Recordatorio"
+            type="datetime-local"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            className="recordatorio"
           />
         </div>
         <div className={!editTarea ? "divEditTarea" : ""}>
@@ -102,7 +107,6 @@ const Tarea = ({ id, text, estado, check, eliminarTarea, saveEditTarea }) => {
           </Box>
         </div>
       </Grid>
-      
     </>
   );
 };

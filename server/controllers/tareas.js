@@ -33,8 +33,9 @@ const updateTarea = async (req, res) => {
 
 const chekedTarea = async (req, res) => {
   const id = req.params.id;
-  const {text} = req.body
+  const {text, author} = req.body
   const newPost = {
+    author,
     text,
     estado: "Completado",
   };

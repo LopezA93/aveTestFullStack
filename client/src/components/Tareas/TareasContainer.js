@@ -25,7 +25,7 @@ const TareasContainer = () => {
 
   const eliminarTarea = async (id) => {
     const response = await deletTarea(id);
-    console.log("tarea eliminada");
+
     return response;
   };
 
@@ -43,6 +43,7 @@ const TareasContainer = () => {
     putTarea(id, newTarea);
 
   };
+
   return (
     <>
       <Container>
@@ -60,6 +61,7 @@ const TareasContainer = () => {
               check={checkedTarea}
               saveEditTarea={edit}
               eliminarTarea={eliminarTarea}
+              author={user.user}
             />
            
 

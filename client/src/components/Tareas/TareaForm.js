@@ -13,7 +13,7 @@ const TareaForm = () => {
   const sendTarea = async (e) => {
     e.preventDefault();
     const tarea = {
-        user,
+        author:user.user,
         text:input
     }
     const response = await postTarea(tarea)

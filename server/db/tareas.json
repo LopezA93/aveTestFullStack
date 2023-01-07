@@ -1,11 +1,13 @@
 [
   {
-    "text": "Comprar la coca ",
+    "author": "Agustin",
+    "text": "Enviar correo electrónico",
     "estado": "Completado",
     "id": "1"
   },
   {
-    "text": "Comprar algo ",
+    "author": "Agustin",
+    "text": "Entregar el test ",
     "estado": "Pendiente",
     "id": 2
   }
